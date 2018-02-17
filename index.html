@@ -18,6 +18,8 @@
         <ul>
             <li>Temperature : {{vm.weatherData.main.temp_min}} - {{vm.weatherData.main.temp_max}} celsius</li>
             <li>Description : {{vm.weatherData.weather[0].description}}</li>
+            
+            <img ng-src="{{vm.setImage(vm.weatherData.weather[0].icon)}}" alt="Weather Image">
         </ul>
     </div>
 
@@ -36,6 +38,7 @@
 
     <!-- Services -->
     <script src="app/services/getWeatherData.js"></script>
+    <script src="app/services/getWeatherImg.js"></script>
 
 
 </body>

@@ -4,9 +4,17 @@
 
     angular.module("WeatherApp").controller("WeatherViewCtrl", weatherViewCtrl);
 
-    function weatherViewCtrl(getData) {
+    function weatherViewCtrl(getData, getImage) {
 
         var vm = this;
+
+
+        vm.setImage = function(weatherCode){
+            return  getImage.weatherImg(weatherCode)
+        }
+        
+
+
         
         // Retrives data from API
         getData.currentWeather()
