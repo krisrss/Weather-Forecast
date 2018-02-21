@@ -1,0 +1,131 @@
+#weather-display-block{
+    font-size: 1em;
+    width: 21em;
+    margin: 0 auto;
+    border: 0.17em solid rgb(70, 155, 211);
+    margin-top: 10px;
+    font-family: 'Exo 2', sans-serif;
+
+}
+
+#block-header{
+    background-color: #4398D0;
+    margin: 0.1em;
+}
+
+#block-header-text{
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0em;
+    font-size: 0.7em;
+    padding: 0.3em;
+}
+
+#right-block{
+    float: right;
+    width: 50%;
+    height: 100%;
+}
+
+#left-block{
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+}
+
+#block-footer{
+    border-top: 0.07em dotted #4398D0;
+    font-size: 0.6em;
+    padding: 0.3em;
+    margin-left: 0.5em;
+
+}
+
+#location-display{
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+}
+
+#current-city{
+    font-size: 1.5em;
+    margin-top: -0.3em;
+    margin-bottom: -0.4em;
+}
+
+#current-country{
+    font-size: 0.8em;
+    color: rgb(119, 119, 119);
+}
+
+
+#icon-block{
+   width: 50%;
+   display: inline-block;
+   margin-bottom: -1.4em;
+}
+
+#weather-temp{
+    width: 50%;
+    float: right;
+    text-align: left;
+    margin-top: 0.5em;
+}
+
+
+#celsius-icon{
+    position: absolute;
+    bottom: 2em;
+    color: rgb(119, 119, 119);
+    font-size: 0.3em;
+    font-weight: bold;
+
+}
+
+#temp-value{
+    font-size: 2.5em;
+    position: relative;
+
+}
+
+
+#weather-icon{
+    height: 100%;
+    width: 100%;
+}
+
+#temp-desc{
+    font-size: 0.7em;
+    color: rgb(119, 119, 119);
+    margin-left: 0.5em;
+    margin-bottom: 0.8em;
+    display: inline-block;
+}
+
+.data-block{
+    margin-left: 0.4em;
+}
+
+#weather-data{
+    margin-top: 0.2em;
+}
+
+.data-title{
+    font-size: 0.6em;
+    margin-bottom: -0.8em;
+    font-weight: bold;
+}
+
+.data-value{
+    color: rgb(0, 102, 153);
+    font-size: 1.5em;
+}
+
+.data-symbol{
+    font-size: 0.7em;
+    font-weight: bold;
+    color: rgb(119, 119, 119)
+}
+
+.icon-right-ident{
+    margin-right: 0.2em;
+}

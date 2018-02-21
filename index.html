@@ -1,33 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Style sheets -->
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
 
+    <!-- Fontawesome CDN -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,500,700" rel="stylesheet">
     <title>Weather App</title>
 </head>
 
 <body ng-app="WeatherApp">
-    
-    <div class="container" ng-controller="WeatherViewCtrl as vm">
-        Current weather in : {{vm.weatherData.name}}
-        <ul>
-            <li>Temperature : {{vm.weatherData.main.temp_min}} - {{vm.weatherData.main.temp_max}} celsius</li>
-            <li>Description : {{vm.weatherData.weather[0].description}}</li>
-            
-            <img ng-src="{{vm.setImage(vm.weatherData.weather[0].icon)}}" alt="Weather Image">
-        </ul>
+
+    <div ng-controller="WeatherViewCtrl as vm">
+        <div id="weather-display-block">
+
+            <div id="block-header">
+                <p id="block-header-text">Current Weather Forecast</p>
+            </div>
+
+            <div id="left-block">
+
+                <div id="location-display">
+                    <div id="current-city">{{vm.weatherData.name}}</div>
+                    <div id="current-country">{{vm.weatherData.sys.country}}</div>
+                </div>
+
+                <div id="icon-block">
+                    <img id="weather-icon" ng-src="{{vm.setImage(vm.weatherData.weather[0].icon)}}" alt="Weather Image">
+                </div>
+                <div id="weather-temp">
+                    <span id="temp-value">{{vm.weatherData.main.temp | number:0}}
+                        <span id="celsius-icon">°C</span>
+                    </span>
+                </div>
+                <span id="temp-desc">{{vm.weatherData.weather[0].description}}</span>
+
+            </div>
+
+            <div id="right-block">
+                <div id="weather-data">
+                    <div class="data-block">
+                        <div class="data-title">Wind</div>
+                        <span class="data-value">
+                            <i class="fab fa-envira icon-right-ident"></i>{{vm.weatherData.wind.speed}}</span>
+                        <span class="data-symbol">m/sek</span>
+                    </div>
+
+                    <div class="data-block">
+                        <div class="data-title">Humidity</div>
+                        <span class="data-value">
+                            <i class="fas fa-tint icon-right-ident"></i>{{vm.weatherData.main.humidity}}</span>
+                        <span class="data-symbol">%</span>
+                    </div>
+
+                    <div class="data-block">
+                        <div class="data-title">Pressure</div>
+                        <span class="data-value">
+                            <i class="fas fa-compass icon-right-ident"></i>{{vm.weatherData.main.pressure}}</span>
+                        <span class="data-symbol">mm Hg</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="block-footer">
+                <i class="fas fa-calendar-alt icon-right-ident"></i> {{vm.weatherData.dt * 1000 | date}}
+            </div>
+
+        </div>
+    </div>
+
     </div>
 
 
     <!--CDN links -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
 
     <!-- Application Script -->
@@ -42,4 +101,5 @@
 
 
 </body>
+
 </html>
