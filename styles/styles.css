@@ -1,6 +1,6 @@
 #weather-display-block{
     font-size: 1em;
-    width: 21em;
+    width: 17em;
     margin: 0 auto;
     border: 0.17em solid rgb(70, 155, 211);
     margin-top: 10px;
@@ -68,7 +68,6 @@
     width: 50%;
     float: right;
     text-align: left;
-    margin-top: 0.5em;
 }
 
 
@@ -117,7 +116,7 @@
 
 .data-value{
     color: rgb(0, 102, 153);
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 .data-symbol{

@@ -65,7 +65,7 @@
                         <div class="data-title">Pressure</div>
                         <span class="data-value">
                             <i class="fas fa-compass icon-right-ident"></i>{{vm.weatherData.main.pressure}}</span>
-                        <span class="data-symbol">mm Hg</span>
+                        <span class="data-symbol">hpa</span>
                     </div>
                 </div>
             </div>
@@ -75,6 +75,12 @@
             </div>
 
         </div>
+
+
+        <div ng-repeat="item in vm.forecastData.list">
+            <p>{{item.main.temp}} degrees--{{item.dt_txt}}</p>
+        </div>
+
     </div>
 
     </div>
