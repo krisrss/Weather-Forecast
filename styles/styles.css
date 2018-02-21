@@ -1,5 +1,5 @@
 #weather-display-block{
-    font-size: 1em;
+    font-size: 1.4em;
     width: 17em;
     margin: 0 auto;
     border: 0.17em solid rgb(70, 155, 211);
@@ -127,4 +127,13 @@
 
 .icon-right-ident{
     margin-right: 0.2em;
+}
+
+
+#forecast-list{
+    margin: 0 auto;
+    width: 27em;
+    border: 0.17em solid rgb(70, 155, 211);
+    margin-top: 0.5em;
+    text-align: center;
 }

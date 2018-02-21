@@ -78,18 +78,24 @@
 
 
         <div id="forecast-list">
-            <ul ng-repeat="(key, value) in vm.forecastData.list | groupBy: 'dt * 1000 | date'">
-                {{key}}
-                <li ng-repeat="item in value">
-                    {{ item.dt_txt }}
-                </li>
+            <div ng-repeat="(key, value) in vm.forecastData.list | groupBy: 'dt * 1000 | date'">
 
-            </ul>
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#{{$index + 1}}">{{key}}</a>
+                            </h4>
+                        </div>
+                        <div id="{{$index + 1}}" class="panel-collapse collapse">
+                            <div ng-repeat="record in value">
+                                {{record.dt_txt}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- <div ng-repeat="item in vm.forecastData.list">
-            <p>{{item.main.temp}} degrees--{{item.dt_txt}}</p>
-        </div> -->
 
     </div>
 
