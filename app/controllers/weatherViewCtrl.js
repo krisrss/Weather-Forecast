@@ -23,6 +23,16 @@
                 vm.forecastData = data;
             }
         );
+
+
+
+
+        vm.filterData = function (data) {
+            var forecastDate = data.dt_txt + '';
+            var splitTime = forecastDate.split(" ");
+            var forecastTime = splitTime[1].slice(0, -3);
+            return (forecastTime === '00:00' || forecastTime === '06:00' || forecastTime === '12:00' || forecastTime === '18:00' );
+        }
     };
 
 }());

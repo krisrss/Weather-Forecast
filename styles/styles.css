@@ -130,11 +130,15 @@
 }
 
 
-#forecast-list{
+#forecast-display-list{
     font-size: 1em;
     margin: 0 auto;
     width: 30em;
     border: 0.17em solid rgb(70, 155, 211);
     margin-top: 0.5em;
     text-align: center;
+}
+
+#title{
+    padding: 0.8em;
 }

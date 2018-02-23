@@ -77,14 +77,15 @@
         </div>
 
 
-        <div id="forecast-list">
+        <div id="forecast-display-list">
             <div ng-repeat="(key, value) in vm.forecastData.list | groupBy: 'dt * 1000 | date'">
 
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" href="#{{$index + 1}}">{{key}}</a>
+                            <h4 id="title" class="panel-title">
+                                <a data-toggle="collapse" href="#{{$index + 1}}">{{value[0].dt * 1000 | date: 'EEE dd MM'}}</a>
+
                             </h4>
                         </div>
                         <div id="{{$index + 1}}" class="panel-collapse collapse">
@@ -103,9 +104,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="record in value">
-                                        <td>{{record.dt * 1000 | date:'h:mma'}}</td>
-                                        <td><img ng-src="{{vm.setImage(record.weather[0].icon)}}" alt="Weather Image"></td>
+                                    <tr ng-repeat="record in value | filter: vm.filterData">
+                                        <td>{{record.dt * 1000 | date:'h:mma'}} </td>
+                                        <td>
+                                            <img ng-src="{{vm.setImage(record.weather[0].icon)}}" alt="Weather Image">
+                                        </td>
                                         <td>{{record.weather[0].description}}</td>
                                         <td>{{record.main.temp | number:0}}</td>
                                         <td>{{record.main.humidity}}</td>
