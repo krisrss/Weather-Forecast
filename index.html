@@ -88,9 +88,32 @@
                             </h4>
                         </div>
                         <div id="{{$index + 1}}" class="panel-collapse collapse">
-                            <div ng-repeat="record in value">
-                                {{record.dt_txt}}
-                            </div>
+
+                            <table class="table table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">Icon</th>
+                                        <th scope="col">Descr</th>
+                                        <th scope="col">Temp</th>
+                                        <th scope="col">Humidity</th>
+                                        <th scope="col">Wind</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="record in value">
+                                        <td>{{record.dt * 1000 | date:'h:mma'}}</td>
+                                        <td><img ng-src="{{vm.setImage(record.weather[0].icon)}}" alt="Weather Image"></td>
+                                        <td>{{record.weather[0].description}}</td>
+                                        <td>{{record.main.temp | number:0}}</td>
+                                        <td>{{record.main.humidity}}</td>
+                                        <td>{{record.wind.speed}}</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
