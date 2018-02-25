@@ -33,7 +33,7 @@
 
         vm.filterData = function (data) {
            var forecastTime = vm.extractTime(data.dt_txt);
-           return (forecastTime === '00:00:00' || forecastTime === '06:00:00' || forecastTime === '12:00:00' || forecastTime === '18:00:00' );
+           return (forecastTime === '00:00:00' || forecastTime === '06:00:00' || forecastTime === '12:00:00' || forecastTime === '21:00:00' );
         };
 
         //Set alias for day period
@@ -48,14 +48,13 @@
                 case "12:00:00":
                     return "Day";
                     break;
-                case "18:00:00":
+                case "21:00:00":
                     return "Evening";
                     break;
                 default:
-                return "Wrong Time"
+                return "Wrong Time";
             };
         };
-
 
     };
 

@@ -1,9 +1,13 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
 #weather-display-block{
     font-size: 1em;
     width: 17em;
     margin: 0 auto;
     border: 0.17em solid rgb(70, 155, 211);
-    margin-top: 10px;
+    margin-top: 1em;
     font-family: 'Exo 2', sans-serif;
 
 }
@@ -133,12 +137,72 @@
 #forecast-display-list{
     font-size: 1em;
     margin: 0 auto;
-    width: 30em;
-    border: 0.17em solid rgb(70, 155, 211);
-    margin-top: 0.5em;
-    text-align: center;
+    width: 22em;
+    /* border: 0.17em solid rgb(70, 155, 211); */
+    margin-top: 1em;
+
 }
 
-#title{
-    padding: 0.8em;
+
+
+
+#panel-title{
+    /* text-shadow: 0 1px 0 #fff; */
+
+    font-family: 'Exo 2', sans-serif;
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 0.3em;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    background: rgb(84, 153, 208);
+    border: 1px solid #ddd;
+
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -o-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+
+    -moz-box-shadow: 0 3px 5px #ccc;
+    -webkit-box-shadow: 0 3px 5px #ccc;
+    -o-box-shadow: 0 3px 5px #ccc;
+    -ms-box-shadow: 0 3px 5px #ccc;
+    box-shadow: 0 3px 5px #ccc;
+
+
+    position: relative;
+}
+
+#title:hover{
+    background: rgb(0, 102, 153);
+
+}
+
+.todaysDay::after {
+    content: "(Today)";
+    font-size: 0.5em;
+    position: absolute;
+    bottom: 0.7em;
+    margin-left: 0.5em;
+}
+
+.arrow-up, .arrow-down{
+    font-size: 0.65em;
+    position: absolute;
+    top: 0.5em;
+    right: 1em;
+}
+
+.arrow-up:before {
+    display: none; 
+    font-family: "Font Awesome 5 Solid"; 
+    content: "\f062";
+}
+
+.arrow-down:before {
+    display: none; 
+    font-family: "Font Awesome 5 Solid"; 
+    content: "\f063";
 }
