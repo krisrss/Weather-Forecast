@@ -87,10 +87,7 @@
 #temp-value{
     font-size: 2.5em;
     position: relative;
-
 }
-
-
 #weather-icon{
     height: 100%;
     width: 100%;
@@ -140,10 +137,86 @@
     width: 22em;
     /* border: 0.17em solid rgb(70, 155, 211); */
     margin-top: 1em;
+}
+
+
+#wind-block{
+    border: 0.15em solid rgb(0, 102, 153);
+    border-radius: 2em;
+    font-size: 0.7em;
+    height: 1.5em;
+    width: 1.5em;
+    display: inline-block;
+
+
+}
+
+.wind-arrow{
+    color: black;
+    display: inline-block;
+    margin-left: 0.2em;
+    margin-bottom: 0.2em;
+    font-size: 0.9em;
 
 }
 
 
+.rotated-n{
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.rotated-ne{
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+.rotated-e{
+    -ms-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.rotated-se{
+    -ms-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.rotated-s{
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.rotated-sw{
+    -ms-transform: rotate(225deg);
+    -moz-transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+}
+
+.rotated-w{
+    -ms-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.rotated-nw{
+    -ms-transform: rotate(315deg);
+    -moz-transform: rotate(315deg);
+    -webkit-transform: rotate(315deg);
+    transform: rotate(315deg);
+}
 
 
 #panel-title{
@@ -171,11 +244,10 @@
     -ms-box-shadow: 0 3px 5px #ccc;
     box-shadow: 0 3px 5px #ccc;
 
-
     position: relative;
 }
 
-#title:hover{
+#panel-title:hover{
     background: rgb(0, 102, 153);
 
 }

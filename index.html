@@ -52,6 +52,11 @@
                         <span class="data-value">
                             <i class="fab fa-envira icon-right-ident"></i>{{vm.weatherData.wind.speed}}</span>
                         <span class="data-symbol">m/sek</span>
+                        <span id="wind-block" class="setWindDir" title="Wind">
+                            {{setWind(vm.weatherData.wind.deg)}}
+                            <i class="fas fa-arrow-up wind-arrow" id="rotated-n"></i>
+                        </span>
+
                     </div>
 
                     <div class="data-block">
@@ -81,7 +86,7 @@
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <a ng-click="setArrow()" id="panel-title" class="panel-title hide-image" data-toggle="collapse" href="#{{$index + 1}}" ng-class="{'todaysDay': $first}">
+                            <a ng-click="setArrow()" id="panel-title" class="panel-title setArrowPossition" data-toggle="collapse" href="#{{$index + 1}}" ng-class="{'todaysDay': $first}">
                                 {{value[0].dt * 1000 | date: 'EEE dd.MM'}} 
                                 <span ng-class="{'arrow-down': $index != 0,'arrow-up ': $first}"></span>
                             </a>
@@ -142,11 +147,14 @@
     <script src="app/services/getWeatherData.js"></script>
     <script src="app/services/getWeatherImg.js"></script>
 
+    <!-- Directives -->
+    <script src="app/directives/setArrow.js"></script>
+    <script src="app/directives/setWindDirection.js"></script>
+
     <!-- Other JS scripts -->
     <script src="app/other/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.6.7/angular-sanitize.min.js"></script>
 
-
-    <script src="app/directives/setArrow.js"></script>
 
 </body>
 

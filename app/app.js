@@ -1,6 +1,4 @@
 (function(){
-
     "use strict";   
-    var weatherApp = angular.module("WeatherApp", ["angular.filter"]);
-    
+    var weatherApp = angular.module("WeatherApp", ["angular.filter","ngSanitize"]);
 }());
