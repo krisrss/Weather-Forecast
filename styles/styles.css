@@ -139,6 +139,15 @@
     margin-top: 1em;
 }
 
+
+.wind-list-block{
+    position: relative;
+    color: rgb(0, 102, 153);
+    display: inline-block;
+    text-align: center;
+
+}
+
 .wind-block{
     position: absolute;
     top: 3.6em;
