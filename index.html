@@ -52,10 +52,16 @@
                         <span class="data-value">
                             <i class="fab fa-envira icon-right-ident"></i>{{vm.weatherData.wind.speed}}</span>
                         <span class="data-symbol">m/sek</span>
-                        <span id="wind-block" class="setWindDir" title="Wind">
-                            {{setWind(vm.weatherData.wind.deg)}}
-                            <i class="fas fa-arrow-up wind-arrow" id="rotated-n"></i>
-                        </span>
+                        
+                        <div class="setWindDir wind-block">
+                            <div class="{{setWind(vm.weatherData.wind.deg)}} wind-arrow-wrap">
+                                <i class="fas fa-arrow-up wind-arrow"></i>
+                            </div>
+
+                            <div class="arrow-txt">
+                                {{setDirection}}
+                            </div>
+                        </div>
 
                     </div>
 
@@ -75,6 +81,8 @@
                 </div>
             </div>
 
+
+
             <div id="block-footer">
                 <i class="fas fa-calendar-alt icon-right-ident"></i> {{vm.weatherData.dt * 1000 | date}}
             </div>
@@ -86,36 +94,32 @@
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <a ng-click="setArrow()" id="panel-title" class="panel-title setArrowPossition" data-toggle="collapse" href="#{{$index + 1}}" ng-class="{'todaysDay': $first}">
-                                {{value[0].dt * 1000 | date: 'EEE dd.MM'}} 
+                            <a ng-click="setArrow()" id="panel-title" class="panel-title setArrowPossition" data-toggle="collapse" href="#{{$index + 1}}"
+                                ng-class="{'todaysDay': $first}">
+                                {{value[0].dt * 1000 | date: 'EEE dd.MM'}}
                                 <span ng-class="{'arrow-down': $index != 0,'arrow-up ': $first}"></span>
                             </a>
                         </div>
                         <div id="{{$index + 1}}" class="panel-collapse collapse" ng-class="{'show': $first}">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                        <th scope="col">Temp</th>
-                                        <th scope="col">Humidity</th>
-                                        <th scope="col">Wind</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr ng-repeat="record in value | filter: vm.filterData">
-                                        <td>{{vm.setDayPrefix(vm.extractTime(record.dt_txt))}}</td>
-                                        <td>
-                                            <img ng-src="{{vm.setImage(record.weather[0].icon)}}" alt="Weather Image">
-                                        </td>
-                                        <td>{{record.weather[0].description}}</td>
-                                        <td>{{record.main.temp | number:0}}</td>
-                                        <td>{{record.main.humidity}}</td>
-                                        <td>{{record.wind.speed}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+
+                            <div class="list-headers-block">
+                                <span class="list-header">Temperature</span>
+                                <span class="list-header">Humidity</span>
+                                <span class="list-header">Wind</span>
+                            </div>
+
+
+                            <div ng-repeat="record in value | filter: vm.filterData">
+                                <span>{{vm.setDayPrefix(vm.extractTime(record.dt_txt))}}</span>
+                                <span>
+                                    <img ng-src="{{vm.setImage(record.weather[0].icon)}}" alt="Weather Image">
+                                </span>
+                                <span>{{record.weather[0].description}}</span>
+                                <span>{{record.main.temp | number:0}}</span>
+                                <span>{{record.main.humidity}}</span>
+                                <span>{{record.wind.speed}}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
