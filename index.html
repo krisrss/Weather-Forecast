@@ -19,6 +19,17 @@
 
 <body ng-app="WeatherApp" ng-cloak>
 
+    <div id="searchBar">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="weather-input">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
+            <input type="text" class="form-control" placeholder="Your City Name..." aria-label="Your City Name" aria-describedby="weather-input">
+        </div>
+    </div>
+
     <div ng-controller="WeatherViewCtrl as vm">
         <div id="weather-display-block">
 
