@@ -80,6 +80,7 @@ body{
 #celsius-icon{
     position: absolute;
     bottom: 2em;
+    left: 2em;
     color: rgb(119, 119, 119);
     font-size: 0.3em;
     font-weight: bold;
