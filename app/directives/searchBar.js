@@ -4,7 +4,7 @@
     angular.module("WeatherApp").directive('searchBar', searchBar);
 
 
-    function searchBar() {
+    function searchBar($state) {
         var linkFn;
 
         linkFn = function (scope, element, attrs) {
@@ -33,7 +33,13 @@
             function codeAddress(address) {
                 geocoder.geocode({ 'address': address }, function (results, status) {
                     if (status == 'OK') {
-                        alert(results[0].geometry.location);
+                        // alert(results[0].geometry.location);
+                        
+                        $state.go('weatherView', {
+                            lat: results[0].geometry.location.lat(),
+                            lng: results[0].geometry.location.lng()
+                        });
+
                     } else {
                         alert('Geocode was not successful: ' + status);
                     }

@@ -23,134 +23,7 @@
         <input id="searchTextField" type="text" size="50" placeholder="Enter a location" autocomplete="on">
     </div>
 
-    <div ng-controller="WeatherViewCtrl as vm">
-
-        <div id="weather-display-block">
-
-            <div id="block-header">
-                <p id="block-header-text">Current Weather Forecast</p>
-            </div>
-
-            <div id="left-block">
-
-                <div id="location-display">
-                    <div id="current-city">{{vm.weatherData.name}}</div>
-                    <div id="current-country">{{vm.weatherData.sys.country}}</div>
-                </div>
-
-                <div id="icon-block">
-                    <img id="weather-icon" ng-src="{{vm.setImage(vm.weatherData.weather[0].icon)}}" alt="Weather Image">
-                </div>
-                <div id="weather-temp">
-                    <span id="temp-value">{{vm.weatherData.main.temp | number:0}}
-                        <span id="celsius-icon">&#8451;</span>
-                    </span>
-                </div>
-                <span id="temp-desc">{{vm.weatherData.weather[0].description}}</span>
-
-            </div>
-
-            <div id="right-block">
-                <div id="weather-data">
-                    <div class="data-block">
-                        <div class="data-title">Wind</div>
-                        <span class="data-value">
-                            <i class="fab fa-envira icon-right-ident"></i>{{vm.weatherData.wind.speed}}</span>
-                        <span class="data-symbol">m/sek</span>
-
-                        <div class="setWindDir wind-block">
-                            <div class="{{setWind(vm.weatherData.wind.deg)}} wind-arrow-wrap">
-                                <i class="fas fa-arrow-up wind-arrow"></i>
-                            </div>
-                            <div class="arrow-txt">
-                                {{setDirection}}
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="data-block">
-                        <div class="data-title">Humidity</div>
-                        <span class="data-value">
-                            <i class="fas fa-tint icon-right-ident"></i>{{vm.weatherData.main.humidity}}</span>
-                        <span class="data-symbol">%</span>
-                    </div>
-
-                    <div class="data-block">
-                        <div class="data-title">Pressure</div>
-                        <span class="data-value">
-                            <i class="fas fa-compass icon-right-ident"></i>{{vm.weatherData.main.pressure}}</span>
-                        <span class="data-symbol">hpa</span>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div id="block-footer">
-                <i class="fas fa-calendar-alt icon-right-ident"></i> {{vm.weatherData.dt * 1000 | date}}
-            </div>
-
-        </div>
-
-        <div id="forecast-display-list">
-            <div ng-repeat="(key, value) in vm.forecastData.list | groupBy: 'dt * 1000 | date'">
-                <div class="panel-group">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <a ng-click="setArrow()" id="panel-title" class="panel-title setArrowPossition" data-toggle="collapse" href="#{{$index + 1}}"
-                                ng-class="{'todaysDay': $first}">
-                                {{value[0].dt * 1000 | date: 'EEE dd.MM'}}
-                                <span ng-class="{'arrow-down': $index != 0,'arrow-up ': $first}"></span>
-                            </a>
-                        </div>
-                        <div id="{{$index + 1}}" class="panel-collapse collapse" ng-class="{'show': $first}">
-
-
-                            <div class="list-headers-block">
-                                <span class="list-header">Temperature
-                                    <span class="list-head-icon">°C</span>
-                                </span>
-
-                                <span class="list-header">Humidity
-                                    <span class="list-head-icon">%</span>
-                                </span>
-
-                                <span class="list-header">Wind
-                                    <span class="list-head-icon">m/sek</span>
-                                </span>
-                            </div>
-
-                            <div class="list-data-block" ng-repeat="record in value | filter: vm.filterData">
-                                <span class="list-day-data">{{vm.setDayPrefix(vm.extractTime(record.dt_txt))}}</span>
-                                <span class="list-img-data">
-                                    <img ng-src="{{vm.setImage(record.weather[0].icon)}}" alt="Weather Image">
-                                </span>
-                                <span class="list-descr-data">{{record.weather[0].description}}</span>
-                                <span class="list-temp-data">{{record.main.temp | number:0}}</span>
-                                <span class="list-humid-data">{{record.main.humidity}}</span>
-                                <span class="list-wind-data">{{record.wind.speed}}</span>
-
-                                <div class="wind-list">
-                                    <div class="setWindDir wind-list-block">
-                                        <div class="{{setWind(record.wind.deg)}} wind-arrow-wrap">
-                                            <i class="fas fa-arrow-up wind-arrow"></i>
-                                        </div>
-                                        <div class="arrow-txt">
-                                            {{setDirection}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    </div>
+    <div ui-view></div>
 
 
     <!--CDN links -->
@@ -181,6 +54,10 @@
     <script src="app/directives/setArrow.js"></script>
     <script src="app/directives/setWindDirection.js"></script>
     <script src="app/directives/searchBar.js"></script>
+
+
+    <!-- UI-Router -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
 
     <!-- Other JS scripts -->
     <script src="app/other/javascript.js"></script>
