@@ -72,7 +72,7 @@
             <div class="panel-group">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a ng-click="setArrow()" id="panel-title" class="panel-title setArrowPossition" data-toggle="collapse" href="#{{$index + 1}}"
+                        <a ng-click="setArrow()" id="panel-title" class="panel-title setArrowPossition" data-toggle="collapse" data-target="#{{$index + 1}}"
                             ng-class="{'todaysDay': $first}">
                             {{value[0].dt * 1000 | date: 'EEE dd.MM'}}
                             <span ng-class="{'arrow-down': $index != 0,'arrow-up ': $first}"></span>
