@@ -4,22 +4,16 @@
 
     angular.module("WeatherApp").controller("WeatherViewCtrl", weatherViewCtrl);
 
-    function weatherViewCtrl(getNowWeather,getData, getImage, $stateParams) {
+    function weatherViewCtrl(getNowWeather,getForecastList, getImage, $stateParams) {
         var vm = this;
 
         vm.weatherData = getNowWeather;
+        vm.forecastData = getForecastList;
 
 
         vm.setImage = function(weatherCode){
             return  getImage.weatherImg(weatherCode)
         }
-
-        
-        getData.forecastWeather()
-            .then(function(data) {
-                vm.forecastData = data;
-            }
-        );
 
 
         vm.extractTime = function(data){

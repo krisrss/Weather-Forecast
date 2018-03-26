@@ -20,6 +20,15 @@
 
                         return getData.currentWeather(latValue,lngValue);
 
+                    },
+
+
+                    getForecastList: function(getData, $stateParams){
+                        var latValue = $stateParams.lat;
+                        var lngValue = $stateParams.lng;
+
+                        return getData.forecastWeather(latValue,lngValue);
+
 
                     }
 
