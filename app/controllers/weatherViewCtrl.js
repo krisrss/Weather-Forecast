@@ -4,7 +4,7 @@
 
     angular.module("WeatherApp").controller("WeatherViewCtrl", weatherViewCtrl);
 
-    function weatherViewCtrl(getNowWeather,getForecastList, getImage, $stateParams) {
+    function weatherViewCtrl(getNowWeather,getForecastList, getImage, $stateParams, $filter) {
         var vm = this;
 
         vm.weatherData = getNowWeather;
@@ -15,16 +15,9 @@
             return  getImage.weatherImg(weatherCode)
         }
 
-
-        vm.extractTime = function(data){
-            var forecastDate = data + '';
-            var splitTime = forecastDate.split(" ");
-            return splitTime[1];
-        };
-
         vm.filterData = function (data) {
-           var forecastTime = vm.extractTime(data.dt_txt);
-           return (forecastTime === '00:00:00' || forecastTime === '06:00:00' || forecastTime === '12:00:00' || forecastTime === '21:00:00' );
+           var forecastTime = $filter('date')(data.dt * 1000,'HH:mm:ss');
+           return (forecastTime === '00:00:00' || forecastTime === '06:00:00' || forecastTime === '12:00:00'||  forecastTime === '21:00:00'  );
         };
 
         //Set alias for day period

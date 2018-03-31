@@ -95,8 +95,8 @@
                             </span>
                         </div>
 
-                        <div class="list-data-block" ng-repeat="record in value | filter: vm.filterData">
-                            <span class="list-day-data">{{vm.setDayPrefix(vm.extractTime(record.dt_txt))}}</span>
+                        <div class="list-data-block" ng-repeat="record in value  | filter: vm.filterData">
+                            <span class="list-day-data">{{vm.setDayPrefix(record.dt  * 1000 | date:'HH:mm:ss' )}}</span>
                             <span class="list-img-data">
                                 <img ng-src="{{vm.setImage(record.weather[0].icon)}}" alt="Weather Image">
                             </span>
