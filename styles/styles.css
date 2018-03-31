@@ -6,6 +6,43 @@ body{
     display: none !important;
 }
 
+#site-logo{
+    text-align: center;
+    margin-top: 1em;
+    color: rgb(0, 102, 153);
+    font-size: 1.2em;
+}
+
+.fa-sun{
+    margin: 0 -0.2em;
+}
+
+.fa-search{
+    color: rgb(0, 102, 153);
+}
+
+#logo-part-1{
+    border-top: 0.06em solid rgb(0, 102, 153);
+    border-right: 0.06em solid rgb(0, 102, 153);
+    border-top-right-radius: 20px;
+    padding-right: 1px;
+
+}
+
+#logo-part-2{
+    border-bottom: 0.06em solid rgb(0, 102, 153);
+    border-left: 0.06em solid rgb(0, 102, 153);
+    border-bottom-left-radius: 20px;
+    padding-left: 8px;
+
+}
+
+.setspace{
+    margin-right: -1px;
+    margin-left: 5px;
+
+}
+
 #weather-display-block{
     font-size: 1em;
     width: 17em;
@@ -138,7 +175,6 @@ body{
     font-size: 1em;
     margin: 0 auto;
     width: 22em;
-    /* border: 0.17em solid rgb(70, 155, 211); */
     margin-top: 1em;
 }
 

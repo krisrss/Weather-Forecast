@@ -19,8 +19,14 @@
 
 <body ng-app="WeatherApp" ng-cloak class="search-bar">
 
-    <div id="searchBar">
-        <input id="searchTextField" type="text" size="50" placeholder="Enter a location" autocomplete="on">
+
+    <div id="site-logo"><span id="logo-part-1">Weather </span><i class="fas fa-sun setspace"></i> <span id="logo-part-2">Forecast</span></div>
+
+    <div class="input-group mb-3"  id="searchBar">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="location"><i class="fas fa-search"></i></span>
+        </div>
+        <input type="text" id="searchTextField" class="form-control" placeholder="Enter a city name..." aria-label="Location-name" aria-describedby="location">
     </div>
 
     <div ui-view></div>
