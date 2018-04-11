@@ -1,71 +1,85 @@
 <div>
-    <div id="weather-display-block">
 
+    <div id="weather-display-block">
         <div id="block-header">
-            <p id="block-header-text">Current Weather Forecast</p>
+            <span id="block-header-text">Current Weather Forecast</span>
         </div>
 
-        <div id="left-block">
+
+
+        <div id="block-content">
 
             <div id="location-display">
                 <div id="current-city">{{vm.weatherData.name}}</div>
                 <div id="current-country">{{vm.weatherData.sys.country}}</div>
             </div>
 
-            <div id="icon-block">
-                <img id="weather-icon" ng-src="{{vm.setImage(vm.weatherData.weather[0].icon)}}" alt="Weather Image">
+            <div id="left-block">
+                <div id="w-logo-block">
+                    <img id="w-logo" ng-src="{{vm.setImage(vm.weatherData.weather[0].icon)}}">
+                </div>
+                <div class="weather-temp">
+                    <div class="temp-value">{{vm.weatherData.main.temp | number:0}}
+                        <span id="celsius-icon"> &#8451;</span>
+                    </div>
+                </div>
+                <span id="temp-desc">{{vm.weatherData.weather[0].description}}</span>
+
             </div>
-            <div id="weather-temp">
-                <span id="temp-value">{{vm.weatherData.main.temp | number:0}}
-                    <span id="celsius-icon">&#8451;</span>
-                </span>
-            </div>
-            <span id="temp-desc">{{vm.weatherData.weather[0].description}}</span>
 
-        </div>
 
-        <div id="right-block">
-            <div id="weather-data">
-                <div class="data-block">
-                    <div class="data-title">Wind</div>
-                    <span class="data-value">
-                        <i class="fab fa-envira icon-right-ident"></i>{{vm.weatherData.wind.speed}}</span>
-                    <span class="data-symbol">m/sek</span>
+            <div class="right-block">
+                <div class="w-data-content">
+                    <div class="data-block">
 
-                    <div class="setWindDir wind-block">
-                        <div class="{{setWind(vm.weatherData.wind.deg)}} wind-arrow-wrap">
-                            <i class="fas fa-arrow-up wind-arrow"></i>
+                        <div class="data-title">Wind</div>
+                        <span class="data-value">
+                            <i class="fab fa-envira"></i>{{vm.weatherData.wind.speed}}</span>
+                        <span class="data-symbol">m/sek</span>
+
+                        <div class="setWindDir wind-block">
+                            <div class="{{setWind(vm.weatherData.wind.deg)}} wind-arrow-wrap">
+
+                                <div class="wind-arrow-block">
+                                    <div class="fas fa-arrow-up wind-arrow"></div>
+                                </div>
+
+                            </div>
+                            <div class="arrow-txt">{{setDirection}}</div>
                         </div>
-                        <div class="arrow-txt">
-                            {{setDirection}}
-                        </div>
+
+                    </div>
+
+                    <div class="data-block">
+                        <div class="data-title">Humidity</div>
+                        <span class="data-value">
+                            <i class="fas fa-tint"></i>{{vm.weatherData.main.humidity}}</span>
+                        <span class="data-symbol">%</span>
+                    </div>
+
+                    <div class="data-block">
+                        <div class="data-title">Pressure</div>
+                        <span class="data-value">
+                            <i class="fas fa-compass icon-right-ident"></i>{{vm.weatherData.main.pressure}}</span>
+                        <span class="data-symbol">hpa</span>
                     </div>
 
                 </div>
-
-                <div class="data-block">
-                    <div class="data-title">Humidity</div>
-                    <span class="data-value">
-                        <i class="fas fa-tint icon-right-ident"></i>{{vm.weatherData.main.humidity}}</span>
-                    <span class="data-symbol">%</span>
-                </div>
-
-                <div class="data-block">
-                    <div class="data-title">Pressure</div>
-                    <span class="data-value">
-                        <i class="fas fa-compass icon-right-ident"></i>{{vm.weatherData.main.pressure}}</span>
-                    <span class="data-symbol">hpa</span>
-                </div>
             </div>
+
         </div>
-
-
 
         <div id="block-footer">
-            <i class="fas fa-calendar-alt icon-right-ident"></i> {{vm.weatherData.dt * 1000 | date}}
+            <i class="fas fa-calendar-alt icon-right-ident"></i>{{vm.weatherData.dt * 1000 | date}}
         </div>
 
+
     </div>
+
+
+
+
+
 
     <div id="forecast-display-list">
         <div ng-repeat="(key, value) in vm.forecastData.list | groupBy: 'dt * 1000 | date'">
@@ -96,25 +110,30 @@
                         </div>
 
                         <div class="list-data-block" ng-repeat="record in value  | filter: vm.filterData">
-                            <span class="list-day-data">{{vm.setDayPrefix(record.dt  * 1000 | date:'HH:mm:ss' )}}</span>
+                            <span class="list-day-data">{{vm.setDayPrefix(record.dt * 1000 | date:'HH:mm:ss' )}}</span>
                             <span class="list-img-data">
                                 <img ng-src="{{vm.setImage(record.weather[0].icon)}}" alt="Weather Image">
                             </span>
                             <span class="list-descr-data">{{record.weather[0].description}}</span>
                             <span class="list-temp-data">{{record.main.temp | number:0}}</span>
                             <span class="list-humid-data">{{record.main.humidity}}</span>
-                            <span class="list-wind-data">{{record.wind.speed}}</span>
+                            <span class="list-wind-data">{{record.wind.speed}}
 
-                            <div class="wind-list">
-                                <div class="setWindDir wind-list-block">
+
+                                <div class="setWindDir wind-block">
                                     <div class="{{setWind(record.wind.deg)}} wind-arrow-wrap">
-                                        <i class="fas fa-arrow-up wind-arrow"></i>
+
+                                        <div class="wind-arrow-block">
+                                            <div class="fas fa-arrow-up wind-arrow"></div>
+                                        </div>
+
                                     </div>
-                                    <div class="arrow-txt">
-                                        {{setDirection}}
-                                    </div>
+                                    <div class="arrow-txt">{{setDirection}}</div>
                                 </div>
-                            </div>
+
+
+                            </span>
+
                         </div>
                     </div>
                 </div>

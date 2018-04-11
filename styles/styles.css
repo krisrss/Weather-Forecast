@@ -1,157 +1,141 @@
-body{
-    font-family: 'Exo 2', sans-serif;
-}
-
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
 }
 
-#site-logo{
-    text-align: center;
-    margin-top: 1em;
-    color: rgb(0, 102, 153);
-    font-size: 1.2em;
+body{
+    font-family: 'Exo 2', sans-serif;
 }
 
-.fa-sun{
-    margin: 0 -0.2em;
-}
 
-.fa-search{
-    color: rgb(0, 102, 153);
-}
-
-#logo-part-1{
-    border-top: 0.06em solid rgb(0, 102, 153);
-    border-right: 0.06em solid rgb(0, 102, 153);
-    border-top-right-radius: 20px;
-    padding-right: 1px;
-
-}
-
-#logo-part-2{
-    border-bottom: 0.06em solid rgb(0, 102, 153);
-    border-left: 0.06em solid rgb(0, 102, 153);
-    border-bottom-left-radius: 20px;
-    padding-left: 8px;
-
-}
-
-.setspace{
-    margin-right: -1px;
-    margin-left: 5px;
-
-}
-
+/* Current weather design */
 #weather-display-block{
-    font-size: 1em;
-    width: 17em;
-    margin: 0 auto;
+    font-size: 0.8em;
     border: 0.17em solid rgb(70, 155, 211);
     margin-top: 1em;
+    display: inline-block;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #block-header{
     background-color: #4398D0;
     margin: 0.1em;
+    text-align: left;
 }
 
 #block-header-text{
     color: white;
     font-weight: bold;
-    margin-bottom: 0em;
     font-size: 0.7em;
-    padding: 0.3em;
+    display: block;
+    padding: 0.2em;
 }
 
-#right-block{
-    float: right;
-    width: 50%;
-    height: 100%;
-}
-
-#left-block{
-    display: inline-block;
-    width: 50%;
-    height: 100%;
-}
-
-#block-footer{
-    border-top: 0.07em dotted #4398D0;
-    font-size: 0.6em;
-    padding: 0.3em;
-    margin-left: 0.5em;
-
-}
 
 #location-display{
-    margin-left: 0.5em;
-    margin-top: 0.5em;
+    position: relative;
+    text-align: left;
 }
 
 #current-city{
-    font-size: 1.5em;
-    margin-top: -0.3em;
-    margin-bottom: -0.4em;
+    font-size: 2em;
+    margin-left: 0.2em;
+    margin-bottom: 0.2em;
 }
 
 #current-country{
     font-size: 0.8em;
     color: rgb(119, 119, 119);
-}
-
-
-#icon-block{
-   width: 50%;
-   display: inline-block;
-   margin-bottom: -1.4em;
-}
-
-#weather-temp{
-    width: 50%;
-    float: right;
-    text-align: left;
-}
-
-
-#celsius-icon{
+    display: inline-block;
     position: absolute;
-    bottom: 2em;
-    left: 2em;
-    color: rgb(119, 119, 119);
-    font-size: 0.3em;
-    font-weight: bold;
+    top: 2.8em;
+    margin-left: 0.7em;
 
 }
 
-#temp-value{
-    font-size: 2.5em;
-    position: relative;
-}
-#weather-icon{
-    height: 100%;
-    width: 100%;
-}
-
-#temp-desc{
-    font-size: 0.7em;
-    color: rgb(119, 119, 119);
-    margin-left: 0.5em;
-    margin-bottom: 0.8em;
+#block-content{
     display: inline-block;
 }
 
-.data-block{
-    margin-left: 0.4em;
+#left-block{
+    display: inline-block;
+    height: 8em;
+    white-space: nowrap;
+    position: relative;
+    margin-bottom: 1.8em;
+    margin-right: 1.1em;
+
+    padding-right: 0.2em;
+
 }
 
-#weather-data{
-    margin-top: 0.2em;
+#w-logo-block{
+    display:inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
+
+#w-logo{
+    width:5em;
+}
+
+.weather-temp{
+    display:inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.temp-value{
+    display:inline;
+    font-size: 2.5em;
+    margin-right: 0.1em;
+    margin-right: 0.4em;
+    position: relative;
+}
+
+#celsius-icon{
+    position: absolute;
+    top: 0.3em;
+    font-size: 0.3em;
+    font-weight: bold;
+    color: rgb(119, 119, 119);
+    margin-right: 0.6em;
+}
+
+#temp-desc{
+    font-size: 0.9em;
+    color: rgb(119, 119, 119);
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 6.1em;
+    margin-left: 0.7em;
+}
+
+.right-block{
+    float: right;
+    height: 8em;
+    white-space: nowrap;
+    position: relative;
+    margin-right: 0.6em;
+}
+
+.w-data-content{
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+
 
 .data-title{
     font-size: 0.6em;
-    margin-bottom: -0.8em;
+    margin-bottom: -0.65em;
     font-weight: bold;
 }
 
@@ -166,61 +150,55 @@ body{
     color: rgb(119, 119, 119)
 }
 
-.icon-right-ident{
-    margin-right: 0.2em;
-}
-
-
-#forecast-display-list{
-    font-size: 1em;
-    margin: 0 auto;
-    width: 22em;
-    margin-top: 1em;
-}
-
-
-.wind-list-block{
-    position: relative;
-    color: rgb(0, 102, 153);
-    display: inline-block;
-    text-align: center;
-
-}
-
 .wind-block{
-    position: absolute;
-    top: 7em;
-    margin-left: 0.3em;
     display: inline-block;
-    text-align: center;
     color: rgb(0, 102, 153);
+    text-align: center;
+    margin-left: 0.1em;
 }
 
-.wind-arrow-wrap{
-    display: inline-block;
-    border: 0.1em solid rgb(0, 102, 153);
+.wind-arrow-block{
+    border: 0.15em solid rgb(0, 102, 153);
+    font-size: 0.7em;
+    height: 1.4em;
+    width: 1.4em;
     border-radius: 2em;
-    width: 1em;
-    height: 1em;
     position: relative;
+    margin: 0 auto;
+
 }
 
 .wind-arrow{
+    margin: 0;
     position: absolute;
-    top: 0.15em;
-    left: 0.23em;
-    font-size: 0.6em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-
 .arrow-txt{
-    margin-top: -0.8em;
+    margin-top: -0.25em;
     font-size: 0.5em;
     font-weight: bold;
 }
 
+.data-block{
+    margin-bottom: 0.2em;
+}
+
+#block-footer{
+    border-top: 0.2em dotted #4398D0;
+    font-size: 0.6em;
+    width: 100%;
+    padding: 0.4em 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: rgb(0, 102, 153);
+}
 
 
+/* Wind arrow rotation */
 .rotated-n{
     -ms-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -277,11 +255,17 @@ body{
     -webkit-transform: rotate(315deg);
     transform: rotate(315deg);
 }
+  
 
+/* Forecast list design */
+#forecast-display-list{
+    font-size: 1em;
+    margin: 0 auto;
+    width: 22em;
+    margin-top: 1em;
+}
 
 #panel-title{
-    /* text-shadow: 0 1px 0 #fff; */
-
     font-family: 'Exo 2', sans-serif;
     color: white;
     font-size: 1.2em;
@@ -290,19 +274,19 @@ body{
     text-decoration: none;
     display: block;
     background: rgb(84, 153, 208);
-    border: 1px solid #ddd;
+    border: 0.07em solid #ddd;
 
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -o-border-radius: 6px;
-    -ms-border-radius: 6px;
-    border-radius: 6px;
+    -moz-border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    border-radius: 0.3em;
 
-    -moz-box-shadow: 0 3px 5px #ccc;
-    -webkit-box-shadow: 0 3px 5px #ccc;
-    -o-box-shadow: 0 3px 5px #ccc;
-    -ms-box-shadow: 0 3px 5px #ccc;
-    box-shadow: 0 3px 5px #ccc;
+    -moz-box-shadow: 0 0.1em 0.2em #ccc;
+    -webkit-box-shadow: 0 0.1em 0.2em #ccc;
+    -o-box-shadow: 0 0.1em 0.2em #ccc;
+    -ms-box-shadow: 0 0.1em 0.2em #ccc;
+    box-shadow: 0 0.1em 0.2em #ccc;
 
     position: relative;
 }
@@ -387,19 +371,19 @@ body{
 
 .list-wind-data{
     position: absolute;
-    right: 2.5em;
-    top: 1.4em;
+    right: 1.1em;
+    top: 1.1em;
 }
 
 .list-humid-data{
     position: absolute;
-    right: 6em;
+    right: 6.4em;
     top: 1.4em;
 }
 
 .list-temp-data{
     position: absolute;
-    left: 7.5em;
+    left: 7.2em;
     top: 0.32em;
     font-size: 2em;
 }
@@ -417,7 +401,7 @@ body{
 .list-img-data{
     position: absolute;
     top: 0.3em;
-    left: 5em;
+    left: 4.6em;
 
 }
 
@@ -428,6 +412,7 @@ body{
     margin-bottom: 1.2em;
 
 }
+
 #searchBar{
     margin: 0 auto;
     text-align: center;
@@ -439,4 +424,56 @@ body{
 
 input{
     font-size: 0.7em !important;
+}
+
+
+/* Font awesome overrides */
+.fa-sun{
+    margin: 0 -0.2em;
+}
+
+.fa-search{
+    color: rgb(0, 102, 153);
+}
+
+.fa-calendar-alt{
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    color: rgb(0, 102, 153);
+}
+
+.fa-envira, .fa-tint, .fa-compass{
+    margin-right: 0.3em;
+}
+
+
+/* Logo design */
+#site-logo{
+    text-align: center;
+    margin-top: 1em;
+    color: rgb(0, 102, 153);
+    font-size: 1.2em;
+}
+
+
+#logo-part-1{
+    border-top: 0.06em solid rgb(0, 102, 153);
+    border-right: 0.06em solid rgb(0, 102, 153);
+    border-top-right-radius: 1em;
+    padding-right: 0.1em;
+
+}
+
+#logo-part-2{
+    border-bottom: 0.06em solid rgb(0, 102, 153);
+    border-left: 0.06em solid rgb(0, 102, 153);
+    border-bottom-left-radius: 1em;
+    padding-left: 0.4em;
+
+}
+
+.setspace-logo{
+    margin-right: -0.04em;
+    margin-left: 0.3em;
+
 }
