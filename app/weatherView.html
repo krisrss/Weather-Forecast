@@ -23,7 +23,9 @@
                         <span id="celsius-icon"> &#8451;</span>
                     </div>
                 </div>
-                <span id="temp-desc">{{vm.weatherData.weather[0].description}}</span>
+                <div id="temp-desc">
+                    <span id="temp-desc-txt">{{vm.weatherData.weather[0].description}}</span>
+                </div>
 
             </div>
 
@@ -60,7 +62,7 @@
                     <div class="data-block">
                         <div class="data-title">Pressure</div>
                         <span class="data-value">
-                            <i class="fas fa-compass icon-right-ident"></i>{{vm.weatherData.main.pressure}}</span>
+                            <i class="fas fa-compass"></i>{{vm.weatherData.main.pressure}}</span>
                         <span class="data-symbol">hpa</span>
                     </div>
 

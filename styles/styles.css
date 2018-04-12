@@ -9,7 +9,7 @@ body{
 
 /* Current weather design */
 #weather-display-block{
-    font-size: 0.8em;
+    font-size: 0.9em;
     border: 0.17em solid rgb(70, 155, 211);
     margin-top: 1em;
     display: inline-block;
@@ -47,11 +47,12 @@ body{
 
 #current-country{
     font-size: 0.8em;
-    color: rgb(119, 119, 119);
+    color: rgb(0, 102, 153);
     display: inline-block;
     position: absolute;
-    top: 2.8em;
+    top: 3.3em;
     margin-left: 0.7em;
+    font-weight: bold;
 
 }
 
@@ -64,29 +65,29 @@ body{
     height: 8em;
     white-space: nowrap;
     position: relative;
-    margin-bottom: 1.8em;
-    margin-right: 1.1em;
 
-    padding-right: 0.2em;
+
+    padding-right: 1.4em;
+    margin-top: -0.8em;
+
 
 }
 
 #w-logo-block{
     display:inline-block;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+
 }
 
 #w-logo{
     width:5em;
+    margin-top: -1em;
 }
 
 .weather-temp{
     display:inline-block;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-top: 2em;
 }
 
 .temp-value{
@@ -107,13 +108,18 @@ body{
 }
 
 #temp-desc{
-    font-size: 0.9em;
+    text-align: center;
+    margin-top: -0.5em;
+    margin-left: 0.5em;
+}
+
+#temp-desc-txt{
+    font-size: 0.8em;
     color: rgb(119, 119, 119);
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    top: 6.1em;
-    margin-left: 0.7em;
+    margin-top: 0.7em;
+    color: rgb(0, 102, 153);
+
+
 }
 
 .right-block{
@@ -122,6 +128,9 @@ body{
     white-space: nowrap;
     position: relative;
     margin-right: 0.6em;
+
+    margin-bottom: 1.8em;
+    margin-right: 1.1em;
 }
 
 .w-data-content{
@@ -392,9 +401,10 @@ body{
     font-weight: normal;
     position: absolute;
     top: 0.7em;
-    left: 9em;
+    left: 10.2em;
     width: 3em;
     text-align: center;
+    font-size: 0.9em;
 
 }
 
