@@ -1,5 +1,4 @@
 <div>
-
     <div id="weather-display-block">
         <div id="block-header">
             <span id="block-header-text">Current Weather Forecast</span>
@@ -77,13 +76,8 @@
 
 
     </div>
-
-
-
-
-
-
-    <div id="forecast-display-list">
+    
+    <div id="forecast-display-list" class="list-filter">
         <div ng-repeat="(key, value) in vm.forecastData.list | groupBy: 'dt * 1000 | date'">
             <div class="panel-group">
                 <div class="panel panel-default">
@@ -111,8 +105,8 @@
                             </span>
                         </div>
 
-                        <div class="list-data-block" ng-repeat="record in value  | filter: vm.filterData">
-                            <span class="list-day-data">{{vm.setDayPrefix(record.dt * 1000 | date:'HH:mm:ss' )}}</span>
+                        <div class="list-data-block" ng-repeat="record in value  | filter: filterData">
+                            <span class="list-day-data">{{setDayPrefix(record.dt * 1000 | date:'HH:mm:ss' )}}</span>
                             <span class="list-img-data">
                                 <img ng-src="{{vm.setImage(record.weather[0].icon)}}" alt="Weather Image">
                             </span>

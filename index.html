@@ -18,13 +18,19 @@
 </head>
 
 <body ng-app="WeatherApp" ng-cloak class="search-bar">
-
-    <div id="site-logo"><span id="logo-part-1">Weather </span><i class="fas fa-sun setspace-logo"></i> <span id="logo-part-2">Forecast</span></div>
-    <div class="input-group mb-3"  id="searchBar">
+    <div id="site-logo">
+        <span id="logo-part-1">Weather </span>
+        <i class="fas fa-sun setspace-logo"></i>
+        <span id="logo-part-2">Forecast</span>
+    </div>
+    <div class="input-group mb-3" id="searchBar">
         <div class="input-group-prepend">
-            <span class="input-group-text" id="location"><i class="fas fa-search"></i></span>
+            <span class="input-group-text" id="location">
+                <i class="fas fa-search"></i>
+            </span>
         </div>
-        <input type="text" id="searchTextField" class="form-control" placeholder="Enter a city name..." aria-label="Location-name" aria-describedby="location">
+        <input type="text" id="searchTextField" class="form-control" placeholder="Enter a city name..." aria-label="Location-name"
+            aria-describedby="location">
     </div>
 
     <div ui-view></div>
@@ -39,9 +45,7 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.17/angular-filter.min.js"></script>
-
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc-Kb7O6Vw8yGPSJwFHc9pA7V4cGQkveM&libraries=places" type="text/javascript"></script>
-
 
 
     <!-- Application Script -->
@@ -58,6 +62,7 @@
     <script src="app/directives/setArrow.js"></script>
     <script src="app/directives/setWindDirection.js"></script>
     <script src="app/directives/searchBar.js"></script>
+    <script src="app/directives/listFilter.js"></script>
 
 
     <!-- UI-Router -->
