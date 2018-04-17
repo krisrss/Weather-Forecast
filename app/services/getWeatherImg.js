@@ -4,7 +4,7 @@
     var getImage = function() {
 
         var weatherImg = function(weatherCode) {
-            return "http://openweathermap.org/img/w/" + weatherCode + ".png"
+            return "https://openweathermap.org/img/w/" + weatherCode + ".png"
         };
 
         return {
