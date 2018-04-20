@@ -8,8 +8,14 @@
         linkFn = function (scope, element, attrs) {
 
             scope.filterData = function (data) {
-                var forecastTime = $filter('date')(data.dt * 1000,'HH:mm:ss');
-                return (forecastTime === '00:00:00' || forecastTime === '06:00:00' || forecastTime === '12:00:00'||  forecastTime === '21:00:00'  );
+                console.log($filter('date')(data.dt * 1000,'HH:mm:ss', "UTC"))
+                var forecastTime = $filter('date')(data.dt * 1000,'HH:mm:ss', "UTC");
+                return (forecastTime === '00:00:00' || forecastTime === '06:00:00' || forecastTime === '15:00:00'||  forecastTime === '18:00:00'  );
+            };
+
+            // Ignores the first record of incoming weather forecast
+            scope.ignore2100 = function (data) {
+                return $filter('date')(data.dt * 1000,'HH:mm:ss', "UTC") !== '21:00:00'
             };
         
             scope.setDayPrefix = function(time){
@@ -20,14 +26,14 @@
                     case "06:00:00":
                         return "Morning";
                         break;
-                    case "12:00:00":
+                    case "15:00:00":
                         return "Day";
                         break;
-                    case "21:00:00":
+                    case "18:00:00":
                         return "Evening";
                         break;
                     default:
-                    return "Wrong Time";
+                    return "Error";
                 };
             };
         };
