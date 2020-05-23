@@ -88,20 +88,21 @@
                         </a>
                     </div>
                     <div id="{{$index + 1}}" class="panel-collapse collapse" ng-class="{'show': $first}">
-
-
-                        <div class="list-headers-block">
-                            <span class="list-header">Temperature
-                                <span class="list-head-icon">°C</span>
-                            </span>
-
-                            <span class="list-header">Humidity
-                                <span class="list-head-icon">%</span>
-                            </span>
-
-                            <span class="list-header">Wind
-                                <span class="list-head-icon">m/sek</span>
-                            </span>
+                        
+                        <div ng-if="value.length != 1">
+                            <div class="list-headers-block">
+                                <span class="list-header">Temperature
+                                    <span class="list-head-icon">°C</span>
+                                </span>
+        
+                                <span class="list-header">Humidity
+                                    <span class="list-head-icon">%</span>
+                                </span>
+            
+                                <span class="list-header">Wind
+                                    <span class="list-head-icon">m/sek</span>
+                                </span>
+                            </div>
                         </div>
 
                         <div class="nodata-message" ng-if="value.length == 1">
