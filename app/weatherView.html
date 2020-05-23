@@ -104,6 +104,12 @@
                             </span>
                         </div>
 
+                        <div ng-if="value.length == 1">
+                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                <h5>No forecast data to display for today</h1>
+                                <h6>Please check the current weather forecast</h5>
+                        </div>
+
                         <div class="list-data-block" ng-repeat="record in value | filter: filterData" ng-if="ignore2100(record)">
                             <span class="list-day-data">{{setDayPrefix(record.dt * 1000 | date:'HH:mm:ss' : 'UTC')}}</span>
                             <span class="list-img-data">
