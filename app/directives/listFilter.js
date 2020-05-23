@@ -8,7 +8,6 @@
         linkFn = function (scope, element, attrs) {
 
             scope.filterData = function (data) {
-                console.log($filter('date')(data.dt * 1000,'HH:mm:ss', "UTC"))
                 var forecastTime = $filter('date')(data.dt * 1000,'HH:mm:ss', "UTC");
                 return (forecastTime === '00:00:00' || forecastTime === '06:00:00' || forecastTime === '15:00:00'||  forecastTime === '18:00:00'  );
             };
