@@ -105,10 +105,12 @@
                             </div>
                         </div>
 
-                        <div class="nodata-message" ng-if="value.length == 1">
+                        <div class="nodata-block" ng-if="value.length == 1">
                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                <h5>No forecast data to display for today</h1>
-                                <h6>Please check the current weather forecast</h5>
+                                <div class="no-data-wrapper">
+                                    <h5>No forecast data to display for today</h5>
+                                    <h6>Please check the current weather forecast</h6>
+                                </div>
                         </div>
 
                         <div class="list-data-block" ng-repeat="record in value | filter: filterData" ng-if="ignore2100(record)">

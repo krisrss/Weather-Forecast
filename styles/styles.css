@@ -274,11 +274,20 @@ body{
     margin-top: 1em;
 }
 
-.nodata-message{
+.nodata-block{
     margin-top: 1em;
     margin-bottom: 2em;
     text-align: center;
+
 }
+
+.no-data-wrapper{
+    border-top: 0.07em dotted #4398D0;
+    border-bottom: 0.07em dotted #4398D0; 
+    padding-top: 1em;
+    padding-bottom: 1em; 
+}
+
 
 #panel-title{
     font-family: 'Exo 2', sans-serif;
@@ -461,6 +470,8 @@ input{
 .fa-exclamation-circle{
     color: rgb(0, 102, 153);
     font-size: 1.8em;
+    margin-bottom: 0.2em;
+
 }
 
 .fa-envira, .fa-tint, .fa-compass{
